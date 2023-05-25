@@ -1,0 +1,685 @@
+/* By Ayanga Oluwamurewa */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    background-color: white;
+}
+
+#landing-page {
+    background-color: white;
+}
+
+#intro {
+    background-color: #FFE9D6;
+    margin: 0px;
+    height: 600px;
+    position: relative;
+}
+
+#prenav {
+    position: relative;
+    padding: 5px 0px;
+    margin: 0px;
+    height: 12%;
+}
+
+#EMS {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 3vw;
+    height: 1vw;
+    min-width: 80px;
+    min-height: 60px;
+    margin: 0px;
+}
+
+#cart-btn {
+    background-color: #FF9A3D;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 3;
+    display: inline-block;
+    min-width: 80px;
+    height: 45px;
+    border: none;
+    border-radius: 15px;
+}
+
+#cart {
+    width: 35px;
+    float: left;
+    margin-top: 2px;
+}
+
+#cart-count {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+#navblk {
+    margin: 75px auto 0px;
+    height: 6.5%;
+    text-align: center;
+    width: 200px;
+}
+
+.nav {
+    text-decoration: dotted;
+    float: left;
+    color: black;
+    width: 25%;
+    /* padding: 10px; */
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0px 4%;
+}
+
+#intro-main{
+    height: 75%;
+    position: relative;
+    text-align: center;
+}
+
+#storefront {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: auto;
+    width: min(100%,300px);
+    padding: 0px 15px;
+}
+
+#div-head {
+    color: #FF9A3D;
+    position: absolute;
+    top: 65%;
+    left: 15%;
+    margin: 0px 0px 20px;
+    height: 30%;
+    width: 75%;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 800;
+    white-space: pre-wrap;
+}
+
+#shop-btn-div {
+    background-color: #FF9A3D;
+    height: 7.5%;
+    border: transparent;
+    border-radius: 5px;
+    width: 50%;
+    margin: 0px auto 20px;
+}
+
+#shop-btn-link {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 10px auto;
+}
+
+#about {
+    background-color: black;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+    color: white;
+    height: auto;
+}
+
+#about p {
+    font-size: 18px;
+    margin: 10px 5px;
+}
+
+#shop {
+    height: auto;
+}
+
+#shop-head {
+    font-size: 25px;
+    font-weight: 800;
+    text-align: center;
+}
+
+#shop-main {
+    display: grid;
+    grid-template-columns: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 10%;
+}
+
+.prod {
+    height: fit-content;
+    text-align: center;
+    position: relative;
+    margin: 20px 0px;
+    border-radius: 3px;
+}
+
+.prod img {
+    width: 100%;
+}
+
+.prod div {
+    position: absolute;
+    top: 0px;
+    left: 10%;
+    width: 80%;
+    height: 250px;
+    margin: 0px auto;
+    color: white;
+    visibility: hidden;
+    background-color: none;
+}
+
+.prod div p {
+    border: 3px dashed white;
+    width: 60%;
+    font-weight: 600px;
+    padding: 5px;
+    font-size: 17px;
+    text-align: center;
+    margin: 100px auto 48px;
+}
+
+.prod div strong {
+    font-size: 25px;
+    font-weight: 600px;
+}
+
+.prod strong {
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    margin: 15px auto;
+}
+
+.prod button {
+    background-color: #FF7A00;
+    margin: 7px auto;
+    padding: auto;
+    width: 90%;
+    height: 40px;
+    border: none;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.modals {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    width: 100%;
+    max-width: 700px;
+    height: fit-content;
+    max-height: 650px;
+    background-color: white;
+    overflow-y: auto;
+    overflow-x: auto;
+    display: none;
+}
+
+#cart-table, #summary-table {
+    margin: 10px auto;
+    width: 100%;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    width: 95%;
+    height: 60px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+td {
+    margin: 5px;
+}
+
+.prod-name {
+    vertical-align: end;
+}
+
+.reduce, .increase, .quant {
+    width: 30%;
+    float: left;
+    font-weight: 700;
+    text-align: center;
+    height: 25px;
+    margin-top: 3px;
+}
+
+.quant {
+    margin-top: 6px;
+}
+
+.increase, .reduce, .clear{
+    background-color: #FF9A3D;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.clear {
+    width: 100%;
+    height: 25px;
+    font-weight: 700;
+}
+
+#cart-form {
+    width: 95%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.warn {
+    font-size: 13px;
+    width: fit-content;
+    padding-top: 0px;
+    height: 20px;
+    color: red;
+    margin: auto;
+    display: none;
+}
+
+.details {
+    width: 90%;
+    height: 25px;
+    background-color: #FFE9D6;
+    margin: 10px;
+}
+
+#cart-amount-div {
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+#cart-amount {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin: 0px auto 20px;
+    padding: 20px;
+    width: 100px;
+}
+
+#cart-amount-div p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#cart-buttons {
+    height: 30px;
+    margin: 0px 10px;
+}
+
+.modals-btn {
+    width: 100px;
+    height: 35px;
+    float: right;
+    border: none;
+    border-radius: 3px;
+    margin-left: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#continue-btn {
+    background-color: #FFE9D6;
+}
+
+#chkout-btn, #ok-btn {
+    background-color: #FF9A3D;
+    color: white;
+}
+
+#summary-modal {
+    height: 500px;
+    max-height: 600px;
+    text-align: center;
+    border: 2px solid #FF9A3D;
+}
+
+#summary-modal p {
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#username {
+    color: #FF7A00;
+}
+
+#summary-modal img {
+    width: 30%;
+    height: 20%;
+}
+
+#summary-modal h2 {
+    font-weight: normal;
+}
+
+#summary-table {
+    width: 80%;
+}
+
+#summary-table tr {
+    width: 90%;
+}
+
+#ok-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+footer {
+    background-color: black;
+    position: relative;
+}
+
+footer img {
+    margin: 10px 0px 10px 5%;
+    float: left;
+    width: 25%;
+}
+
+footer p, small {
+    clear: left;
+    text-align: right;
+    display: block;
+    color: white;
+    padding: 5px;
+    margin: 0px; 
+}
+
+@media screen and (min-width:481px){
+    #intro {
+        height: 600px;
+    }
+
+    #navblk {
+        width: 230px;
+        margin: 20px auto 0px;
+    }
+
+    #storefront {
+        width: min(100%,350px);
+        top: 35%;
+    }
+
+    #div-head {
+        top: 70%;
+        left: 10%;
+        margin-bottom: 0px;
+        width: 85%;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    #shop-btn-div {
+        width: 250px;
+        left: 18%;
+    }
+
+    #shop-main {
+        grid-template-columns: 45% 45%;
+        justify-content: space-between;
+    }
+
+    footer {
+        padding:  0px;
+        height: 80px;
+    }
+
+    footer img {
+        width: 20%;
+        max-width: 150px;
+    }
+
+    #footer-text {
+        position: absolute;
+        right: 0px;
+        padding-top: 20px;
+        margin-left: 5px;
+        height: 45px;
+        display: inline-block;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+
+    small {
+        font-size: 14px;
+    }
+
+    .modals {
+        width: 90%;
+    }
+
+    table {
+        margin: auto;
+        width: 90%;
+    }
+
+    tr {
+        font-size: 16px;
+    }
+
+    #cart-amount {
+        font-size: 20px;
+    }
+
+    #cart-amount-div p {
+        font-size: 18px;
+    }
+
+    .modals-btn {
+        width: 30%;
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width:769px){
+    #intro {
+        height: 600px;
+    }
+
+    #EMS {
+        top: 15px;
+        right: 15px;
+        width: 150px;
+        height: 40px;
+    }
+
+    #navblk {
+        width: 350px;
+    }
+
+    .nav {
+        font-size: 20px;
+    }
+
+    #intro-main {
+        padding: 0px 15px;
+    }
+
+    #storefront {
+        position: static;
+        transform: translate(0px,0px);
+        float: right;
+        margin: 55px 2% 25px 0px;
+        width: 57%;
+        max-width: 390px;
+    }
+
+    #div-head {
+        position: static;
+        float: right;
+        width: 35%;
+        margin: 60px 5% 40px 0px;
+        height: 290px;
+    }
+
+    h1 {
+        white-space: normal;
+        font-size: 37px;
+        line-height: 2;
+    }
+
+    #about p {
+        font-size: 21px;
+        margin: 20px 10px;
+    }
+
+    footer {
+        height: 90px;
+    }
+
+    footer p {
+        font-size: 20px;
+    }
+
+    footer small {
+        font-size: 17px;
+    }
+
+    tr {
+        font-size: 19px;
+    }
+
+    #cart-amount {
+        font-size: 22px;
+    }
+
+    #cart-amount-div p {
+        font-size: 20px;
+    }
+
+    .modals-btn {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width:901px){
+    #EMS {
+        top: 5px;
+        width: 13vw;
+        height: 7vw;
+    }
+
+    #intro {
+        height: 630px;
+    }
+
+    #cart-btn {
+        min-width: 90px;
+        height: 55px;
+    }
+
+    #cart {
+        width: 45px;
+    }
+
+    #cart-count {
+        font-size: 33px;
+    }
+
+    #storefront {
+        width: 45%;
+        max-width: 450px;
+        max-height: 450px;
+    }
+
+    #div-head{
+        max-width: 350px;
+    }
+
+    h1 {
+        font-size: 45px
+    }
+
+    #shop-btn-div {
+        width: 350px;
+    }
+
+    #shop-main {
+        grid-template-columns: 25% 25% 25%;
+        justify-content: space-around;
+        padding: 0px;
+    }
+
+    #about p {
+        font-size: 23px;
+    }
+    
+    footer img {
+        width: 15%;
+    }
+
+    footer p {
+        font-size: 21px;
+    }
+
+    small {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width:1051px){
+    #EMS {
+        top: 0px;
+        width: 11vw;
+        height: 6vw;
+    }
+
+    #storefront {
+        margin-top: 5px;
+        margin-right: 10%;
+        width: 40%;
+        max-width: none;
+    }
+
+    #div-head{
+        margin-right: 5%;
+        width: 40%;
+        margin-top: 40px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+}

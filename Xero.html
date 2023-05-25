@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- By Ayanga Oluwamurewa -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta prod-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Millenials</title>
+    <link rel="stylesheet" href="Silver.css">
+</head>
+
+<body>
+    <div id="landing-page">
+    <div id="intro">
+        <div id="prenav">
+            <img id="EMS" src="Images\EMS.svg" alt="EMS">
+            <div id="navblk">
+                <a class="nav" href="#intro">Intro</a>
+                <a class="nav" href="#about">About</a>
+                <a class="nav" href="#shop-head">Shop</a>
+            </div>
+            <button id="cart-btn">
+                    <img id="cart" src="Images\cart.svg" alt="cart">
+                    <strong id="cart-count">0</strong>
+            </button>
+        </div>
+        <div id="intro-main">
+            <img id="storefront" src="Images\heroImage.png" alt="Storefront Image">
+            <div id="div-head"><h1>THE E&#8209;MILLENIAL STORE</h1></div>
+        </div>
+        <div id="shop-btn-div">    
+            <a id="shop-btn-link" href="#shop-head">SHOP NOW</a>
+        </div>
+    </div>
+    <div id="about">
+        <p>E-Millenial is a hypothetical store for gadgets we believe every 'Millenial' or 'Gen Z' should
+            have today. Our products range from mobile phones to laptops, smart watches and other gadgets.
+            Explore all our gadgets and choose the one that suits you best.
+            Happy shopping ! 
+        </p>
+    </div>
+
+    
+    <div id="shop">
+        <h2 id="shop-head">OUR GADGETS</h2>
+        <div id="shop-main">
+            <div class="prod" id="p1">
+                <img src="Images\product1.png" alt="Samsung Tv img">
+                <div>
+                    <p>price</p>
+                    <strong>&#8358;500,000</strong>
+                </div>
+                <strong>SAMSUNG TV</strong>
+                <button id="btn1" class="btn">ADD TO CART</button>
+            </div>
+            <div class="prod" id="p2">
+                <img src="Images\product2.png" alt="Pixel 4A img">
+                <div>
+                    <p>price</p>
+                    <strong>&#8358;250,000</strong>
+                </div>
+                <strong>PIXEL 4A</strong>
+                <button id="btn2" class="btn">ADD TO CART</button>
+            </div>
+            <div class="prod" id="p3">
+                <img src="Images\product3.png" alt="PS 5 img">
+                <div>
+                    <p>price</p>
+                    <strong>&#8358;300,000</strong>
+                </div>
+                <strong>PS 5</strong>
+                <button id="btn3" class="btn">ADD TO CART</button>
+            </div>
+            <div class="prod" id="p4">
+                <img src="Images\product4.png" alt="MacBook Air img">
+                <div>
+                    <p>price</p>
+                    <strong>&#8358;800,000</strong>
+                </div>
+                <strong>MacBook Air</strong>
+                <button id="btn4" class="btn">ADD TO CART</button>
+            </div>
+            <div class="prod" id="p5">
+                <img src="Images\product5.png" alt="Apple Watch img">
+                <div>
+                    <p>price</p>
+                    <strong>&#8358;95,000</strong>
+                </div>
+                <strong>APPLE WATCH</strong>
+                <button id="btn5" class="btn">ADD TO CART</button>
+            </div>
+            <div class="prod" id="p6">
+                <img src="Images\product6.png" alt="Air Pods img">
+                <div>
+                    <p>price</p>
+                    <strong>&#8358;75,000</strong>
+                </div>
+                <strong>AIR PODS</strong>
+                <button id="btn6" class="btn">ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <img src="Images\EMS.svg" alt="EMS">
+        <div id="footer-text"> <p>Designed and remastered by kami no frontend:</p>
+        <small>~xerosine</small> </div>
+    </footer>
+    </div>
+
+    <div id="cart-modal" class="modals">
+        <div id="cart-table">
+            <table>
+                <tbody id="cart-tbody">
+                    <tr>
+                        <th>S/N</th>
+                        <th>Item</th>
+                        <th colspan="2">Price</th>
+                        <th>Quantity</th>
+                        <th></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="cart-form-div">
+            <form action="javascript:void(0)" id="cart-form" autocomplete="on">
+                <input type="text" placeholder="Your name" name="user-name" class="details" value=""><br>
+                <small class="warn"></small>
+                <input type="email" name="user-email" placeholder="Your Email: example@example.com" class="details" id="email-address"><br>
+                <small class="warn"></small>
+                <input type="text" name="user-contact" class="details" placeholder="Your Phone Number: +234**********"><br>
+                <small class="warn"></small>
+            </form>
+        </div>
+        <div id="cart-amount-div"> 
+            <p>Total amount to be paid:</p>
+            <strong id="cart-amount">&#8358;0</strong>
+        </div>
+        <div id="cart-buttons">
+        <button id="chkout-btn" class="modals-btn" type="submit" form="cart-form">Checkout</button>
+        <button id="continue-btn" class="modals-btn">Continue Shopping</button>
+        </div>
+    </div>
+
+    <div id="summary-modal" class="modals">
+        <p>Thank You, <span id="username"></span>, Your Order Has Been Received</p>
+        <img src="Images\check.svg" alt="Check Sign">
+        <h2>Summary</h2>
+        <table id="summary-table">
+            <tr>
+                <th>S/N</th>
+                <th>Item</th>
+                <th>Quantity</th>
+            </tr>
+        </table>
+        <button id="ok-btn" class="modals-btn">Ok</button>
+    </div>
+    
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="Pluto.js"></script>
+</body>
+</html>
