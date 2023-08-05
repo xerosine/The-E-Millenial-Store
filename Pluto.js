@@ -206,6 +206,12 @@ function itemRemove(){
     total -= quantPriceArr[rmvBtnPos]; //8
     cartAmount.innerHTML = `&#8358;${total}`; //9
 
+    for (let j = lastItemPos; j > rmvBtnPos; j--){
+        if (rmvBtnID.includes('bn')){ //17
+            itemsBtnArr[link[j]].id = itemsBtnArr[link[j-1]].id; 
+        }
+    }
+
     for (let j = rmvBtnPos; j < lastItemPos; j++){ //10
         cartItemsArr[j].children[0].innerHTML = j + 1; //11
         cartItemsArr[j].children[1].innerHTML = cartItemsArr[j+1].children[1].innerHTML; //12
@@ -213,9 +219,6 @@ function itemRemove(){
         cartItemsArr[j].children[2].innerHTML = `&#8358;${quantPriceArr[j]}`; //14
         quantArr[j] = quantArr[j+1]; //15
         showQuantArr[j].innerHTML = `${quantArr[j]}`; //16
-        if (rmvBtnID.includes('bn')){ //17
-            itemsBtnArr[link[j+1]].id = itemsBtnArr[link[j]].id; 
-        }
         link[j] = link[j+1]; //18
     }
 
@@ -245,8 +248,8 @@ function itemRemove(){
     " 14 - display shifted price in cart
     " 15 - shifts next row's quantity value to current row slot in quantity storing array
     " 16 - displays shifted quantity in cart
-    " 17(if statement) - assigns next item's id to current item's id if shop button is responsible for removal,
-    this is to ensure the items maintain the right id according to their position
+    " 17(if statement) - assigns item's id to previous item's id from last item to removed item if shop button
+     is responsible for removal, this is to ensure the items maintain the right id according to their position
     " 18 - shifts removed item link value off the cart-to-shop position linking array
     " 19 - removes last child to avoid repitition after cart has been rearranged
     " 20 - transforms the "Remove From Cart" button in shop after item removal and assigns "add to cart" function to it
@@ -395,7 +398,8 @@ for(let j = 0; j < 3; j++){
                 //warning for invalid email
                 invalid(j, '&#9888; Invalid Email');
                 break;
-            case (inputBox.name == 'user-contact' && (inputBox.value.length < 13 || !inputBox.value.includes('+'))):
+            case (inputBox.name == 'user-contact' && ((inputBox.value.length != 11 || !inputBox.value.startsWith('0')) && 
+                (inputBox.value.length != 14 || !inputBox.value.startsWith('+234')))):
                 //warning for invalid phone number
                 invalid(j, '&#9888; Invalid Phone Number');
                 break;
@@ -405,7 +409,7 @@ for(let j = 0; j < 3; j++){
                 validityArr[j] = true;          //updates validity of input to true
                 warningArr[j].style.display = 'none';
                 switch(j){
-                    //stores custoner info in object
+                    //stores customer info in object
                     case 0:
                         info.custName = inputBox.value;
                         break;
@@ -484,6 +488,7 @@ document.getElementById('cart-form').onsubmit = function(){
 //This function resets all summary input and empties cart on click of 'ok'
 document.getElementById('ok-btn').onclick = function(){
     summItemsCount = 0;
+    let temp = cartItemsCount;
     //This clears all form values
     for(let i=0; i<3; i++){
         inputArr[i].value = '';
@@ -495,7 +500,7 @@ document.getElementById('ok-btn').onclick = function(){
         summRowArr[summRowPos] = null;
     }
     //This empties the shopping cart by imitating minus button removal of items and continuously removing topmost shop item
-    for(let i = 0; i < cartItemsCount; i++){
+    for(let i = 0; i < temp; i++){
         zeroQuant = true;            //sets condition for zeroQuant or minus removal
         zeroQuantID = `d1`;          //imitates topmost minus button
         itemRemove();
