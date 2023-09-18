@@ -207,9 +207,7 @@ function itemRemove(){
     cartAmount.innerHTML = `&#8358;${total}`; //9
 
     for (let j = lastItemPos; j > rmvBtnPos; j--){
-        if (rmvBtnID.includes('bn')){ //17
             itemsBtnArr[link[j]].id = itemsBtnArr[link[j-1]].id; 
-        }
     }
 
     for (let j = rmvBtnPos; j < lastItemPos; j++){ //10
@@ -343,19 +341,17 @@ const info = {
 
 cartBtn = document.getElementById('cart-btn');      //DOM object for the cart button
 const cartModal = document.getElementById('cart-modal');        //DOM object for the cart modal
-const landingPage = document.getElementById('landing-page');      //DOM object for landing page
+const modalCont = document.getElementsByClassName('modal-container');      //DOM object for landing page
 
 //This function displays the cart modal on click of the cart button
 cartBtn.onclick = function(event){
-    cartModal.style.display = 'block';
-    landingPage.style.filter = 'brightness(50%)';
+    modalCont[0].style.display = 'block';
     event.stopPropagation();       //prevents cart click from triggering function below
 
     //This function closes the cartModal on click anywhere outside the cart modal and its children elements 
     window.onclick = function(event){
         if (event.target != cartModal && cartModal.contains(event.target) === false){
-            cartModal.style.display = 'none';
-            landingPage.style.filter = 'brightness(100%)';
+            modalCont[0].style.display = 'none';
         }
     
     }
@@ -365,8 +361,7 @@ const next = document.getElementById('continue-btn');       //DOM object for con
 
 //This function closes the cartModal on click on 'continue shopping' button
 next.onclick = function(){
-    cartModal.style.display = 'none';
-    landingPage.style.filter = 'brightness(100%)';
+    modalCont[0].style.display = 'none';
 }
 
 const inputArr = document.getElementsByClassName('details');     //HTML collection of form inputs
@@ -449,7 +444,7 @@ function showSummary(){
         fillSummRow(summRowPos);
         document.getElementById('summary-table').appendChild(summRowArr[summRowPos]);    //appends complete row to summary table
     }
-    document.getElementById('summary-modal').style.display = 'block';     //displays summary
+    modalCont[1].style.display = 'block';     //displays summary
 }
 
 function payWithPaystack() {
@@ -473,7 +468,7 @@ document.getElementById('cart-form').onsubmit = function(){
     //checks validity of all three inputs and ensures at least 1 shop item is selected
     if (validityArr.every( x => x == true) && cartCounter.innerHTML !== '0'){
         payWithPaystack();
-        cartModal.style.display = 'none';                      //hides first cartModal
+        modalCont[0].style.display = 'none';                      //hides first cartModal
         return true;
     } else if (cartCounter.innerHTML == '0'){
         alert("Select at least 1 shop items to proceed");      //warning for no shop shopItems selected
@@ -505,8 +500,7 @@ document.getElementById('ok-btn').onclick = function(){
         zeroQuantID = `d1`;          //imitates topmost minus button
         itemRemove();
     }
-    document.getElementById('summary-modal').style.display = 'none';      //hides showSummary cartModal
-    landingPage.style.filter = 'brightness(100%)';
+    modalCont[1].style.display = 'none';      //hides showSummary cartModal
 }
 
 //By Ayanga Oluwamurewa

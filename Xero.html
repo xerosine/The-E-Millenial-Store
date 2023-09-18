@@ -108,55 +108,57 @@
         <small>~xerosine</small> </div>
     </footer>
     </div>
-
-    <div id="cart-modal" class="modals">
-        <div id="cart-table">
-            <table>
-                <tbody id="cart-tbody">
-                    <tr>
-                        <th>S/N</th>
-                        <th>Item</th>
-                        <th colspan="2">Price</th>
-                        <th>Quantity</th>
-                        <th></th>
-                    </tr>
-                </tbody>
+    <div class="modal-container">
+        <div id="cart-modal" class="modals">
+            <div id="cart-table">
+                <table>
+                    <tbody id="cart-tbody">
+                        <tr>
+                            <th>S/N</th>
+                            <th>Item</th>
+                            <th colspan="2">Price</th>
+                            <th>Quantity</th>
+                            <th></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="cart-form-div">
+                <form action="javascript:void(0)" id="cart-form" autocomplete="on">
+                    <input type="text" placeholder="Your name" name="user-name" class="details" value=""><br>
+                    <small class="warn"></small>
+                    <input type="email" name="user-email" placeholder="Your Email: example@example.com" class="details" id="email-address"><br>
+                    <small class="warn"></small>
+                    <input type="text" name="user-contact" class="details" placeholder="Your Phone Number: +234**********"><br>
+                    <small class="warn"></small>
+                </form>
+            </div>
+            <div id="cart-amount-div"> 
+                <p>Total amount to be paid:</p>
+                <strong id="cart-amount">&#8358;0</strong>
+            </div>
+            <div id="cart-buttons">
+            <button id="chkout-btn" class="modals-btn" type="submit" form="cart-form">Checkout</button>
+            <button id="continue-btn" class="modals-btn">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-container">
+        <div id="summary-modal" class="modals">
+            <p>Thank You, <span id="username"></span>, Your Order Has Been Received</p>
+            <img src="Images\check.svg" alt="Check Sign">
+            <h2>Summary</h2>
+            <table id="summary-table">
+                <tr>
+                    <th>S/N</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                </tr>
             </table>
-        </div>
-        <div id="cart-form-div">
-            <form action="javascript:void(0)" id="cart-form" autocomplete="on">
-                <input type="text" placeholder="Your name" name="user-name" class="details" value=""><br>
-                <small class="warn"></small>
-                <input type="email" name="user-email" placeholder="Your Email: example@example.com" class="details" id="email-address"><br>
-                <small class="warn"></small>
-                <input type="text" name="user-contact" class="details" placeholder="Your Phone Number: +234**********"><br>
-                <small class="warn"></small>
-            </form>
-        </div>
-        <div id="cart-amount-div"> 
-            <p>Total amount to be paid:</p>
-            <strong id="cart-amount">&#8358;0</strong>
-        </div>
-        <div id="cart-buttons">
-        <button id="chkout-btn" class="modals-btn" type="submit" form="cart-form">Checkout</button>
-        <button id="continue-btn" class="modals-btn">Continue Shopping</button>
+            <button id="ok-btn" class="modals-btn">Ok</button>
         </div>
     </div>
 
-    <div id="summary-modal" class="modals">
-        <p>Thank You, <span id="username"></span>, Your Order Has Been Received</p>
-        <img src="Images\check.svg" alt="Check Sign">
-        <h2>Summary</h2>
-        <table id="summary-table">
-            <tr>
-                <th>S/N</th>
-                <th>Item</th>
-                <th>Quantity</th>
-            </tr>
-        </table>
-        <button id="ok-btn" class="modals-btn">Ok</button>
-    </div>
-    
     <script src="https://js.paystack.co/v1/inline.js"></script>
     <script src="Pluto.js"></script>
 </body>
