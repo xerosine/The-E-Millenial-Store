@@ -350,7 +350,7 @@ cartBtn.onclick = function(event){
 
     //This function closes the cartModal on click anywhere outside the cart modal and its children elements 
     window.onclick = function(event){
-        if (event.target != cartModal && cartModal.contains(event.target) === false){
+        if (event.target != cartModal && !cartModal.contains(event.target)){
             modalCont[0].style.display = 'none';
         }
     
