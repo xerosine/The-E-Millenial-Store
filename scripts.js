@@ -1,4 +1,3 @@
-
 const shopItems = [{
     index: 1,
     id: 'p1',
@@ -374,9 +373,10 @@ function invalid (j, text){
     warningArr[j].innerHTML = text;    
 }
 
-const validityArr = []                 //array for validity of three inputs
+const validityArr = []            //array for validity of three inputs
 
 for(let j = 0; j < 3; j++){
+    validityArr[j] = false   
     //This function checks for validity of inputs and displays warning when invalid
     inputArr[j].onblur = function(){
         let inputBox = inputArr[j]
@@ -384,14 +384,17 @@ for(let j = 0; j < 3; j++){
             case (inputBox.value == ''):        
                 //warning for no input
                 invalid(j, '&#9888; This field cannot be empty');    //&#9888; refers to HTML symbol for warning
+                validity[j] = false
                 break;
             case (inputBox.name == 'user-name' && inputBox.value.length > 30):
                 //warning for name above 30 characters
                 invalid(j, '&#9888; Input cannot exceed 30 characters');
+                validity[j] = false
                 break;
             case (inputBox.name == 'user-email' && (!inputBox.value.includes('@') || !inputArr[1].value.includes('.'))):
                 //warning for invalid email
                 invalid(j, '&#9888; Invalid Email');
+                validity[j] = false
                 break;
             case (inputBox.name == 'user-contact' && ((inputBox.value.length != 11 || !inputBox.value.startsWith('0')) && 
                 (inputBox.value.length != 14 || !inputBox.value.startsWith('+234')))):
@@ -471,7 +474,7 @@ document.getElementById('cart-form').onsubmit = function(){
         modalCont[0].style.display = 'none';                      //hides first cartModal
         return true;
     } else if (cartCounter.innerHTML == '0'){
-        alert("Select at least 1 shop items to proceed");      //warning for no shop shopItems selected
+        alert("Select at least 1 shop item to proceed");      //warning for no shop shopItems selected
         return false;
     } else {
         alert("Please enter your details appropriately")       //warningArr for invalid input
