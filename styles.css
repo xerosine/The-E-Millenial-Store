@@ -2,7 +2,6 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -10,17 +9,11 @@ body {
     min-height: 100vh;
 }
 
-#intro {
-    background-color: #FFE9D6;
-    position: relative;
-    padding-bottom: .3em;
-}
-
+/* navbar */
 #prenav {
     position: relative;
     padding: 5px 0;
 }
-
 #EMS {
     position: absolute;
     top: .6em;
@@ -28,7 +21,6 @@ body {
     width: 6.5rem;
     height: 2rem;
 }
-
 #cart-btn {
     background-color: #FF9A3D;
     position: fixed;
@@ -43,11 +35,9 @@ body {
     border: none;
     border-radius: .8em;
 }
-
 #cart-img {
     width: 2.1rem;
 }
-
 #cart-count {
     color: white;
     text-align: center;
@@ -55,14 +45,12 @@ body {
     font-weight: bold;
     margin-top: 0.1em;
 }
-
 #navblk {
     margin: 3.5em auto 0;
     text-align: center;
     display: flex;
     width: 15rem;
 }
-
 .nav {
     text-decoration: dotted;
     color: black;
@@ -72,18 +60,22 @@ body {
     margin: 0 auto;
 }
 
+/* intro section */
+#intro {
+    background-color: #FFE9D6;
+    position: relative;
+    padding-bottom: .3em;
+}
 #intro-main{
     display: flex;
     text-align: center;
     flex-wrap: wrap;
 }
-
 #h1-wrapper {
     color: #FF9A3D;
     margin: .8em 0;
     width: 100%;
 }
-
 h1 {
     font-size: 1.7rem;
     font-weight: 800;
@@ -91,16 +83,13 @@ h1 {
     width: 80%;
     margin: auto;
 }
-
 .intro-img-wrapper {
     width: 100%;
 }
-
 #intro-img {
     width: 70%;
     margin: 0;
 }
-
 #shop-btn-div {
     background-color: #FF9A3D;
     border: transparent;
@@ -108,7 +97,6 @@ h1 {
     width: 50%;
     margin: 1em auto;
 }
-
 #shop-btn-link {
     font-size: 1rem;
     font-weight: bold;
@@ -120,24 +108,25 @@ h1 {
     margin: .6em auto;
 }
 
+/* about section */
 #about {
     background-color: black;
     text-align: center;
     padding: .7em;
     color: white;
 }
-
 #about p {
     font-size: 1rem;
     margin: .6em .2rem;
+    line-height: 1.5;
 }
 
+/* shop section */
 #shop-head {
     font-size: 1.3rem;
     font-weight: 800;
     text-align: center;
 }
-
 #shop-main {
     display: grid;
     grid-template-columns: 45% 45%;
@@ -145,33 +134,28 @@ h1 {
     align-items: center;
     padding: .4em;
 }
-
 .prod {
     text-align: center;
-    margin: 1em 0;
+    margin: 1em auto;
     border-radius: .2em;
-    max-width: 11em;
+    max-width: 20em;
 }
-
 .prod-img-wrapper {
     position: relative;
 }
-
 .prod img {
     width: 100%;
 }
-
 .prod-img-wrapper div {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 4px;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     visibility: hidden;
 }
-
 .prod div p {
     border-bottom: 3px solid white;
     width: 60%;
@@ -181,18 +165,15 @@ h1 {
     text-align: center;
     margin: 2em auto 1.3em;
 }
-
 .prod div strong {
     font-size: 1.5rem;
 }
-
 .prod strong {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     display: block;
     margin: 15px auto;
 }
-
 .prod button {
     background-color: #FF7A00;
     margin: .5em auto;
@@ -205,18 +186,18 @@ h1 {
     border-radius: 5px;
 }
 
+/* modals */
 .modal-container {
     position: fixed;
     top: 0;
     left: 0;
     display: none;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 3;
     padding: .4em;
     width: 100%;
     height: 100vh;    
 }
-
 .modals {
     position: relative;
     top: 50%;
@@ -224,36 +205,34 @@ h1 {
     transform: translate(-50%,-50%);
     width: 100%;
     padding: .4em;
-    max-width: 700px;
-    max-height: 90vh;
+    max-width: 750px;
+    max-height: 80vh;
+    border: none;
+    border-radius: .3em;
     background-color: white;
     overflow-y: auto;
 }
 
+/* cart modal */
 #cart-table, #summary-table {
     margin: 1.5em auto;
     width: 100%;
     text-align: left;
 }
-
 table {
     width: 100%;
 }
-
 tr {
     height: 3.5em;
     font-weight: 600;
-    font-size: 13px;
+    font-size: .8rem;
 }
-
 td {
     margin: .4em;
 }
-
 /* .prod-name {
     vertical-align: end;
 } */
-
 .reduce, .increase, .quant {
     width: 30%;
     float: left;
@@ -262,32 +241,27 @@ td {
     height: 1.5em;
     margin-top: .3em;
 }
-
 .quant {
     margin-top: .45em;
 }
-
 .increase, .reduce, .clear{
     background-color: #FF9A3D;
     border: none;
     padding: 1px;
     border-radius: 5px;
     text-align: center;
+    font-weight: 600;
 }
-
 .clear {
     width: 100%;
     height: 1.6em;
-    font-weight: 600;
     margin-top: .2em;
 }
-
 #cart-form {
     width: 95%;
     margin: 1.5em auto;
     text-align: center;
 }
-
 .warn {
     font-size: .8rem;
     padding-top: 0px;
@@ -296,40 +270,36 @@ td {
     margin: auto;
     display: none;
 }
-
 .details {
     width: 90%;
     height: 1.7em;
     background-color: #FFE9D6;
     margin: 10px;
+    border: 1px solid #FF7A00;
+    border-radius: .2em;
 }
-
 #cart-amount-div {
     width: 90%;
     margin: 0 auto;
     text-align: center;
 }
-
 #cart-amount {
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: bold;
     display: block;
     margin: 1.5em auto;
     width: 7em;
 }
-
 #cart-amount-div p {
     font-size: 1rem;
     font-weight: 600;
 }
-
 #cart-buttons {
     height: 2em;
 }
-
 .modals-btn {
-    width: 7.5em;
-    height: 35px;
+    width: 7.5rem;
+    height: 2.1rem;
     float: right;
     border: none;
     border-radius: 3px;
@@ -337,341 +307,206 @@ td {
     font-size: .8rem;
     font-weight: 600;
 }
-
 #continue-btn {
     background-color: #FFE9D6;
 }
-
 #chkout-btn, #ok-btn {
     background-color: #FF9A3D;
     color: white;
 }
 
+/* summary modal */
 #summary-modal {
-    height: 30em;
-    max-height: 630px;
+    max-height: 90vh;
+    height: auto;
     text-align: center;
     border: 2px solid #FF9A3D;
     border-radius: .3em;
 }
-
 #summary-modal p {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
 }
-
 #username {
     color: #FF7A00;
 }
-
 #summary-modal img {
     width: 30%;
     height: 20%;
 }
-
 #summary-modal h2 {
     font-weight: normal;
 }
-
 #summary-table {
     width: 85%;
 }
-
 #summary-table tr {
     width: 100%;
 }
-
 #ok-btn {
     position: absolute;
     bottom: .4em;
     right: .4em;
+    float: none;
 }
 
 footer {
     background-color: black;
     display: flex;
+    align-items: baseline;
     flex-wrap: wrap;
+    padding: .2em;
 }
-
 .footer-img-wrapper {
     width: 6.5em;
     margin: .4em;
 }
-
 footer img {
     max-width: 100%;
 }
-
 #footer-text {
     margin-left: auto;  
     padding-right: .4em;  
 }
-
-footer p, small {
+footer p {
     text-align: right;
     display: block;
     color: white;
     margin: .2em;
 }
 
-@media screen and (min-width: 481px){
-    #intro {
-        height: 600px;
-    }
-
-    #navblk {
-        width: 230px;
-        margin: 20px auto 0px;
-    }
-
-    #storefront {
-        width: min(100%,350px);
-        top: 35%;
-    }
-
-    #div-head {
-        top: 70%;
-        left: 10%;
-        margin-bottom: 0px;
-        width: 85%;
-    }
-
-    h1 {
-        font-size: 27px;
-    }
-
-    #shop-btn-div {
-        width: 250px;
-        left: 18%;
-    }
-
-    #shop-main {
-        grid-template-columns: 45% 45%;
-        justify-content: space-between;
-    }
-
-    footer {
-        padding:  0px;
-        height: 80px;
-    }
-
-    footer img {
-        width: 20%;
-        max-width: 150px;
-    }
-
-    #footer-text {
-        position: absolute;
-        right: 0px;
-        padding-top: 20px;
-        margin-left: 5px;
-        height: 45px;
-        display: inline-block;
-    }
-
-    footer p {
-        font-size: 16px;
-    }
-
-    small {
-        font-size: 14px;
-    }
-
-    .modals {
-        width: 90%;
-    }
-
-    table {
-        margin: auto;
-        width: 90%;
-    }
-
-    tr {
-        font-size: 16px;
-    }
-
-    #cart-amount {
-        font-size: 20px;
-    }
-
-    #cart-amount-div p {
-        font-size: 18px;
-    }
-
-    .modals-btn {
-        width: 30%;
-        max-width: 300px;
-    }
-}
-
-@media screen and (min-width: 769px) {
-    #intro {
-        height: 600px;
-    }
-
+@media screen and (min-width: 576px) {
     #EMS {
-        top: 15px;
-        right: 15px;
-        width: 150px;
-        height: 40px;
+        left: .6em;
+        height: 4rem;
+        width: 7.5rem;
     }
-
     #navblk {
-        width: 350px;
+        margin: 1.7em auto;
+        width: 18rem;
     }
-
     .nav {
-        font-size: 20px;
+        font-size: 1.4rem;
     }
-
-    #intro-main {
-        padding: 0px 15px;
-    }
-
-    #storefront {
-        position: static;
-        transform: translate(0px,0px);
-        float: right;
-        margin: 55px 2% 25px 0px;
-        width: 57%;
-        max-width: 390px;
-    }
-
-    #div-head {
-        position: static;
-        float: right;
-        width: 35%;
-        margin: 60px 5% 40px 0px;
-        height: 290px;
-    }
-
-    h1 {
-        white-space: normal;
-        font-size: 37px;
-        line-height: 2;
-    }
-
-    #about p {
-        font-size: 21px;
-        margin: 20px 10px;
-    }
-
-    footer {
-        height: 90px;
-    }
-
-    footer p {
-        font-size: 20px;
-    }
-
-    footer small {
-        font-size: 17px;
-    }
-
-    tr {
-        font-size: 19px;
-    }
-
-    #cart-amount {
-        font-size: 22px;
-    }
-
-    #cart-amount-div p {
-        font-size: 20px;
-    }
-
-    .modals-btn {
-        font-size: 14px;
-    }
-}
-
-@media screen and (min-width: 901px) {
-    #EMS {
-        top: 5px;
-        width: 13vw;
-        height: 7vw;
-    }
-
-    #intro {
-        height: 630px;
-    }
-
     #cart-btn {
-        min-width: 90px;
-        height: 55px;
+        top: .8em;
+        right: .7em;
+        width: 5rem;
+        height: 3.5rem;
     }
-
     #cart-img {
-        width: 45px;
+        width: 2.9rem;
     }
-
     #cart-count {
-        font-size: 33px;
+        font-size: 2.1rem;
+        margin-right: .05em;
     }
-
-    #storefront {
-        width: 45%;
-        max-width: 450px;
-        max-height: 450px;
+    #h1-wrapper {
+        margin: 2em;
     }
-
-    #div-head{
-        max-width: 350px;
-    }
-
-    h1 {
-        font-size: 45px
-    }
-
     #shop-btn-div {
-        width: 350px;
+        width: 40%;
     }
-
-    #shop-main {
-        grid-template-columns: 25% 25% 25%;
-        justify-content: space-around;
-        padding: 0px;
+    .modal-container {
+        padding: .6em;   
     }
-
-    #about p {
-        font-size: 23px;
+    #cart-table, #summary-table {
+        margin: 1.5em auto;
+        width: 90%;
     }
-    
-    footer img {
-        width: 15%;
+    tr {
+        font-size: 1.2rem;
     }
-
-    footer p {
-        font-size: 21px;
+    .increase, .reduce, .clear{
+        padding: 1px;
+        font-weight: 600;
+        font-size: 1.2rem;
     }
-
-    small {
-        font-size: 18px;
+    .clear {
+        height: auto;
+        padding: .2em 0;
+        font-size: 1.1rem;
+    }
+    #cart-form-div {
+        padding: .5em 0;
+    }
+    .details {
+        height: 2.3em;
+        font-size: 1rem;
+    }
+    .warn {
+        font-size: 1rem;
+    }
+    #cart-amount-div p {
+        font-size: 1.45rem;
+    }
+    #cart-amount {
+        font-size: 1.4rem;
+    }
+    #cart-buttons {
+        height: 3.7em;
+    }
+    .modals-btn {
+        height: 3.5rem;
+        width: 8rem;
+        margin: 0 .7em 0 0;
+        font-size: 1.1rem;
     }
 }
 
-@media screen and (min-width: 1051px) {
-    #EMS {
-        top: 0px;
-        width: 11vw;
-        height: 6vw;
+@media screen and (min-width: 768px) {
+    #intro-main {
+        justify-content: center;
     }
-
-    #storefront {
-        margin-top: 5px;
-        margin-right: 10%;
-        width: 40%;
-        max-width: none;
+    #h1-wrapper {
+        width: 45%;
+        max-width: 400px;
+        display: flex;
     }
-
-    #div-head{
-        margin-right: 5%;
-        width: 40%;
-        margin-top: 40px;
-    }
-
     h1 {
-        font-size: 50px;
+        font-size: 2.5rem;
+    }
+    .intro-img-wrapper {
+        width: 45%;
+        max-width: 400px;
+        margin-top: .8em;
+    }
+    #intro-img {
+        width: 100%;
+    }
+    #shop-btn-link {
+        font-size: 1.2rem;
+    }
+    #about p {
+        font-size: 1.4rem;
+    }
+    #shop-head {
+        font-size: 1.5rem;
+    }
+    #shop-main {
+        grid-template-columns: 30% 30% 30%;
+    }
+    .prod strong {
+        font-size: 1.3rem;
+    }
+    .prod button {
+        font-size: 1rem;
+    }
+    footer p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #navblk {
+        width: 30rem;
+    }
+    .nav {
+        font-size: 1.7rem;
+    }
+    h1 {
+        font-size: 2.7rem;
+        line-height: 1.8;
     }
 }

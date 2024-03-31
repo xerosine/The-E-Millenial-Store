@@ -96,7 +96,7 @@ function genCartCols(cartRow, itemCartPos){
         + '<showQuantArr class="quant">0</showQuantArr>'
         + '<button class="increase" id="incr' + (itemCartPos + 1) + '">+</button></td>';
     cells += '<td class="prod-clear">'
-        + '<button class="clear" id="clr' + (itemCartPos + 1) + '">Remove</button></td>';
+        + '<button class="clear" id="clr' + (itemCartPos + 1) + '">remove</button></td>';
     cartRow.innerHTML = cells;
 }
 
