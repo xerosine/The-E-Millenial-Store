@@ -36,23 +36,21 @@ const shopItems = [{
 },
 ]
 
-var itemArray = document.getElementsByClassName('prod');        //HTML collection of grid shopItems
-var inventory = shopItems.length;    //keeps track of number of available shop items
-
+const itemArray = document.getElementsByClassName('prod');        //HTML collection of grid shopItems
+let inventory = shopItems.length;    //keeps track of number of available shop items
+const imgOverlayWrappers = document.getElementsByClassName('prod-img-wrapper')
 function overlayEffect(i){
-    let item = itemArray[i];                    //temporary value for storing shopItems
+    let item = imgOverlayWrappers[i];                    //temporary value for storing shopItems
     let itemImg = item.children[0];             //refers to shop shopItems image
     let itemImgOverlay = item.children[1];      //refers to image overlay
 
     //renders image overlay visible and reduces brightness
-    function on(){                              
-        itemImg.style.filter = 'brightness(40%)';        
+    function on(){                                     
         itemImgOverlay.style.visibility = 'visible';     
     }
 
     //hides image overlay and returns brightness to original value
     function off(){                             
-        itemImg.style.filter = 'brightness(100%)';
         itemImgOverlay.style.visibility = 'hidden';
     }
 
